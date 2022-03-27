@@ -20,7 +20,7 @@ export default {
           "hello": "world"
         },
         "nested_array": [
-          "esto", "es", "Array", 3
+          "esto", "es", "Array", 4
         ]
       }
     }

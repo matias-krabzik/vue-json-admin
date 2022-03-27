@@ -27,9 +27,10 @@
 
 <script>
 import vmodel from "../../vmodel";
-import JsonViewer from "./JsonViewer";
+
 import JBag from "./JBag.vue"
 import JExpand from './JExpand.vue';
+import JsonViewer from "./JsonViewer.vue";
 
 export default {
     name: "json-viewer",

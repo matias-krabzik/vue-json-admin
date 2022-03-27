@@ -1,11 +1,13 @@
 {
   "name": "json-admin",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main" : ".dist/vue-json-admin.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-library" : "vue-cli-service build --target lib --name vue-json-admin ./src/install.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -33,7 +35,9 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",

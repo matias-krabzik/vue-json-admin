@@ -2,5 +2,5 @@
 
 ## Add it to your project
 ```
-npm install vue-json-admin --save
+npm install json-admin-vue --save
 ```

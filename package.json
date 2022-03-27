@@ -1,5 +1,5 @@
 {
-  "name": "json-admin",
+  "name": "json-admin-vue",
   "version": "0.1.0",
   "private": false,
   "main" : ".dist/vue-json-admin.common.js",
@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build-library" : "vue-cli-service build --target lib --name vue-json-admin ./src/install.js"
+    "build-library" : "vue-cli-service build --target lib --name json-admin-vue ./src/install.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",

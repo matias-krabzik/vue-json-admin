@@ -1,7 +1,7 @@
 {
   "name": "json-admin-vue",
   "description": "JSON editor and viewer",
-  "version": "0.1.7",
+  "version": "0.1.5",
   "private": false,
   "main": "dist/json-admin-vue.common.js",
   "module": "dist/json-admin-vue.esm.js",

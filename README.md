@@ -7,7 +7,7 @@ npm install json-admin-vue --save
 
 ## How to use it
 
-```
+```vue
 <template>
     <div>
         <json-admin-vue v-model="json"></json-admin-vue>
@@ -32,3 +32,10 @@ export default {
 }
 </script>
 ```
+## Propeties
+
+| Property      | Action | Values |
+| ----------- | ----------- | ----------- |
+| tags      | shows the data type indicator labels        | ```Boolean```, default: ```true```|
+| edit      | The component behaves as a JSON data editor.        | ```Boolean```, default: ```false```|
+| styled      | Just add a container box        | ```Boolean```, default: ```false```|

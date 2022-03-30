@@ -1,7 +1,7 @@
 <template>  
     <div>
         <div v-if="label != null">
-            <span v-html="keyStyle(label)"></span>: <j-bag v-if="bags" :text="whatIsIt(mixval)" />{{ startTag() }}
+            <span v-html="keyStyle(label)"></span>: <j-bag v-if="tags" :text="whatIsIt(mixval)" />{{ startTag() }}
             <span v-if="!expand"> ... {{ endTag() }}</span>
             <j-expand :expand="expand" @changed="toggleSpand" />
         </div>
@@ -10,13 +10,13 @@
             <div style="margin-left: 15px;" v-for="(v, k, i) in mixval" :key="i">
 
                 <template v-if="isArray()">
-                    <j-bag v-if="bags" :text="whatIsIt(v)" /> <span v-html="valueStyle(v)"></span>
+                    <j-bag v-if="tags" :text="whatIsIt(v)" /> <span v-html="valueStyle(v)"></span>
                 </template>
 
-                <json-viewer v-else-if="hasChilds(mixval[k])" v-model="mixval[k]" :label="k" :bags="bags" :expanded="false" :size="Object.keys(mixval[k]).length"></json-viewer>
+                <json-viewer v-else-if="hasChilds(mixval[k])" v-model="mixval[k]" :label="k" :tags="tags" :expanded="false" :size="Object.keys(mixval[k]).length"></json-viewer>
 
                 <template v-else>
-                    <div class="json-key">"{{ k }}"</div>: <j-bag v-if="bags" :text="whatIsIt(v)" /> <span v-html="valueStyle(v)"></span>
+                    <div class="json-key">"{{ k }}"</div>: <j-bag v-if="tags" :text="whatIsIt(v)" /> <span v-html="valueStyle(v)"></span>
                 </template>
             </div>
         </div>
@@ -41,7 +41,7 @@ export default {
     mixins: [ vmodel ],
     props: {
         label: { type: String, default: null },
-        bags: { type: Boolean, default: true },
+        tags: { type: Boolean, default: true },
         expanded: { type: Boolean, default: true },
         size: { type: Number, default: -1 }
     },

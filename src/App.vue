@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <json-admin v-model="json" :bags="true"/>
+    <json-admin v-model="json" :bags="true" :edit="false"/>
   </div>
 </template>
 

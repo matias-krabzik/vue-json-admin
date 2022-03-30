@@ -1,19 +1,19 @@
 <template>  
     <div>
         <p v-if="label != null">
-            {{ label }}: <j-bag v-if="bags" :text="whatIsIt(localValue)" />{{ startTag() }}
+            {{ label }}: <j-bag v-if="bags" :text="whatIsIt(mixval)" />{{ startTag() }}
             <span v-if="!expand"> ... {{ endTag() }}</span>
             <j-expand :expand="expand" @changed="toggleSpand" />
         </p>
         <p v-else>{{ startTag() }}<span style="font: bold;" v-if="!expand"> ... {{ endTag() }}</span><j-expand :expand="expand" @changed="toggleSpand" /></p>
         <div v-if="expand">
-            <p style="margin-left: 15px;" v-for="(k, i) in localValue" :key="i">
+            <p style="margin-left: 15px;" v-for="(k, i) in mixval" :key="i">
 
                 <template v-if="isArray()">
                     <j-bag v-if="bags" :text="whatIsIt(k)" /> {{ k }}
                 </template>
 
-                <json-viewer v-else-if="hasChilds(localValue[i])" v-model="localValue[i]" :label="i" :bags="bags" :expanded="false"></json-viewer>
+                <json-viewer v-else-if="hasChilds(mixval[i])" v-model="mixval[i]" :label="i" :bags="bags" :expanded="false"></json-viewer>
 
                 <template v-else>
                     {{ i }}: <j-bag v-if="bags" :text="whatIsIt(k)" /> {{ k }}
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import vmodel from "../../vmodel";
+import vmodel from "vmodel-mixin";
 
 import JBag from "./JBag.vue"
 import JExpand from './JExpand.vue';
@@ -61,7 +61,7 @@ export default {
             return this.isArray() ? "]": "}"
         },
         isArray() {
-            return Array.isArray(this.localValue)
+            return Array.isArray(this.mixval)
         },
         hasChilds(value) {
             return (this.whatIsIt(value) === "Array" || this.whatIsIt(value) === "Object");

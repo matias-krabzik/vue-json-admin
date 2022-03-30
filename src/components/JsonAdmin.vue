@@ -1,18 +1,20 @@
 <template>
     <div v-if="!edit">
-        <json-viewer v-model="localValue" :bags="bags" />
+        <json-viewer v-model="mixval" :bags="bags" />
     </div> 
     <div v-else>
-        <p>Comming soon...    C:</p>
+        <j-editor v-model="mixval" />
     </div> 
 </template>
 
 <script>
-import vmodel from "../vmodel";
+import vmodel from "vmodel-mixin";
+
+import JEditor from './editor/JEditor.vue';
 import JsonViewer from './viewer/JsonViewer.vue';
 
 export default {
-    components: { JsonViewer },
+    components: { JsonViewer, JEditor },
     name: 'json-admin',
     mixins: [ vmodel ],
     props: {

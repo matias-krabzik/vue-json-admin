@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <json-admin v-model="json" :bags="true" :edit="false"/>
+    <json-admin v-model="json" :bags="true" :edit="false" :styled="true"/>
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
       json: {
         "hello": "world",
         "nested": {
-          "hello": "world"
+          "hello": "world",
+          "key": "value"
         },
         "nested_array": [
           "esto", "es", "Array", 4

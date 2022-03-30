@@ -1,10 +1,12 @@
 <template>
-    <div v-if="!edit">
-        <json-viewer v-model="mixval" :bags="bags" />
-    </div> 
-    <div v-else>
-        <j-editor v-model="mixval" />
-    </div> 
+    <div :class="container">
+        <div v-if="!edit">
+            <json-viewer v-model="mixval" :bags="bags" />
+        </div> 
+        <div v-else>
+            <j-editor v-model="mixval" />
+        </div> 
+    </div>
 </template>
 
 <script>
@@ -20,11 +22,22 @@ export default {
     props: {
         label: { type: String, default: null },
         bags: { type: Boolean, default: true },
-        edit: { type: Boolean, default: false }
+        edit: { type: Boolean, default: false },
+        styled: { type: Boolean, default: false }
+    },
+    computed: {
+        container() {
+            return this.styled ? "container": "";
+        }
     }
 }
 </script>
 
 <style>
-
+    .container  {
+        background-color: ghostwhite;
+        border: 1px solid silver;
+        border-radius: 5px;
+        padding: 20px; 
+   }
 </style>

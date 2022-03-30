@@ -33,5 +33,6 @@ export default {
         border: 1px solid #686451;
         border-radius: 3px;  
         background-color: #f1f1f1; 
+        font-size: 0.6em;
     }
 </style>

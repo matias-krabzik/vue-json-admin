@@ -32,7 +32,7 @@ export default {
 }
 </script>
 ```
-## Propeties
+## Properties
 
 | Property      | Action | Values |
 | ----------- | ----------- | ----------- |
